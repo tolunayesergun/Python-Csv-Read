@@ -22,12 +22,11 @@ def SortArrays(firstArray,secondArray):
     for i in range(n):
         for j in range(0, n-i-1):
             if float(secondArray[j]) < float(secondArray[j+1]):
-                secondArray[j], secondArray[j+1] = secondArray[j+1], secondArray[j]
                 firstArray[j], firstArray[j+1] = firstArray[j+1], firstArray[j]
-
+                secondArray[j], secondArray[j+1] = secondArray[j+1], secondArray[j]
+                
 
 def PrintResults(_length,firstArray,secondArray):
     SortArrays(firstArray,secondArray)
     for i in range(_length):
         print(firstArray[i]+" "+secondArray[i])
-        if i == 20: break
