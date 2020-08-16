@@ -1,13 +1,12 @@
 import csv
-import covidCsv as ccs
+import functionsModule as fm
 
 corona = csv.DictReader(open('owid-covid-data.csv'))
+locationList = []
+caseList = []
 
 for row in corona:
-    if ccs.LocationIsExist(row["location"]):
-        ccs.AddToLists(row["location"])
-    else:
-        ccs.FindBiggerCase(row["total_cases"])
+    if fm.ElementIsNotExist(row["location"],locationList):fm.AddToLists(row["location"],locationList,caseList)
+    else: fm.FindBiggerValue(row["total_cases"],caseList)
 
-
-ccs.PrintResults(10)
+fm.PrintResults(20,locationList,caseList)
