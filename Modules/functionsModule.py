@@ -33,11 +33,10 @@ def SortArrays(firstArray, secondArray):
 
 
 def Graph(firstArray, secondArray):
-    firstArray = np.flip(firstArray[0:20])
-    secondArray = np.flip(secondArray[0:20])
+    firstArray = np.flip(firstArray[1:20])
+    secondArray = np.flip(secondArray[1:20])
     array_float = np.array(secondArray, dtype='float')
     array_int = np.array(array_float, dtype='int')
-
     plt.figure(figsize=(10, 5))
     plt.title('Total Cases of the 20 Countries')
     plt.xlabel("Countries")
