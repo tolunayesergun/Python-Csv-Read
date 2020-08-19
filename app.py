@@ -1,7 +1,7 @@
-import functionsModule as fm
+from Modules import functionsModule as fm
 import csv
 
-corona = csv.DictReader(open('owid-covid-data.csv'))
+corona = csv.DictReader(open('data/owid-covid-data.csv'))
 locationList = []
 caseList = []
 
